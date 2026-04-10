@@ -4,23 +4,10 @@
   "trades": [],
   "equityHistory": [
     {
-      "time": "2026-04-10T18:00:00Z",
+      "time": "2026-04-10T19:21:04.386Z",
       "equity": 10000
     }
   ],
-  "signals": [
-    {
-      "symbol": "BTC",
-      "signal": "HOLD",
-      "rsi": 63.1,
-      "reason": "RSI neutral"
-    },
-    {
-      "symbol": "ETH",
-      "signal": "SELL",
-      "rsi": 71.9,
-      "reason": "RSI overbought"
-    }
-  ],
-  "lastUpdated": "2026-04-10T19:01:02.200Z"
+  "signals": [],
+  "lastUpdated": "2026-04-10T19:21:04.387Z"
 }
