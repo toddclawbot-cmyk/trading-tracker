@@ -876,10 +876,13 @@ function updateHeader(data) {
 // ─── Load Data ────────────────────────────────────────────────────────
 async function loadData() {
   try {
-    const DATA_URL = 'https://raw.githubusercontent.com/toddclawbot-cmyk/trading-tracker/main/dashboard-data.json';
-    const resp = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    const data = await resp.json();
+    // Fetch from GitHub API (bypasses CDN caching issues with raw URL)
+    const DATA_URL = 'https://api.github.com/repos/toddclawbot-cmyk/trading-tracker/contents/dashboard-data.json';
+    const resp = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store', headers: { Accept: 'application/vnd.github.v3+json' } });
+    if (!resp.ok) return;
+    const githubData = await resp.json();
+    const rawContent = atob(githubData.content.replace(/\n/g, ''));
+    data = JSON.parse(rawContent);
     currentData = data;
 
     updateHeader(data);
