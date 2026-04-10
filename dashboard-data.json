@@ -1,1 +1,1 @@
-{"balance":10000,"positions":[],"trades":[],"equityHistory":[{"time":"2026-04-10T19:22:00Z","equity":10000}],"lastUpdated":"2026-04-10T19:47:38.759Z"}
+{"balance":9977.55,"positions":[{"symbol":"ETH","side":"LONG","qty":0.01,"entry":2245.5,"current":2245.93,"pnl":0,"pnlPct":0.02}],"trades":[],"equityHistory":[{"time":"2026-04-10T19:40:26.002Z","equity":10000},{"time":"2026-04-10T19:45:31.413Z","equity":10000},{"time":"2026-04-10T19:48:06.363Z","equity":10000}],"signals":[],"lastUpdated":"2026-04-10T19:48:06.363Z"}
