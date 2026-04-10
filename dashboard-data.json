@@ -6,9 +6,9 @@
       "side": "LONG",
       "qty": 0.01,
       "entry": 2245.5,
-      "current": 2247.82,
+      "current": 2247.1,
       "pnl": 0.02,
-      "pnlPct": 0.1
+      "pnlPct": 0.07
     }
   ],
   "trades": [],
@@ -156,6 +156,10 @@
     {
       "time": "2026-04-10T22:33:40.413Z",
       "equity": 10000.02
+    },
+    {
+      "time": "2026-04-10T22:38:46.016Z",
+      "equity": 10000.02
     }
   ],
   "signals": [
@@ -165,7 +169,7 @@
       "reason": "RSI overbought (72.8)",
       "confidence": "HIGH",
       "rsi": 72.8,
-      "time": "2026-04-10T22:33:35.839Z"
+      "time": "2026-04-10T22:38:41.459Z"
     },
     {
       "symbol": "ETH",
@@ -173,7 +177,7 @@
       "reason": "RSI overbought (66.7)",
       "confidence": "HIGH",
       "rsi": 66.7,
-      "time": "2026-04-10T22:33:37.381Z"
+      "time": "2026-04-10T22:38:42.988Z"
     },
     {
       "symbol": "SOL",
@@ -181,8 +185,8 @@
       "reason": "RSI neutral (64.8)",
       "confidence": "LOW",
       "rsi": 64.8,
-      "time": "2026-04-10T22:33:38.910Z"
+      "time": "2026-04-10T22:38:44.512Z"
     }
   ],
-  "lastUpdated": "2026-04-10T22:33:40.413Z"
+  "lastUpdated": "2026-04-10T22:38:46.016Z"
 }
