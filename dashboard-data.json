@@ -219,6 +219,10 @@
     {
       "time": "2026-04-10T23:49:05.066Z",
       "equity": 9999.98
+    },
+    {
+      "time": "2026-04-10T23:54:10.374Z",
+      "equity": 9999.98
     }
   ],
   "signals": [
@@ -228,7 +232,7 @@
       "reason": "RSI overbought (72.8)",
       "confidence": "HIGH",
       "rsi": 72.8,
-      "time": "2026-04-10T23:49:00.495Z"
+      "time": "2026-04-10T23:54:05.822Z"
     },
     {
       "symbol": "ETH",
@@ -236,7 +240,7 @@
       "reason": "RSI overbought (66.7)",
       "confidence": "HIGH",
       "rsi": 66.7,
-      "time": "2026-04-10T23:49:02.032Z"
+      "time": "2026-04-10T23:54:07.344Z"
     },
     {
       "symbol": "SOL",
@@ -244,8 +248,8 @@
       "reason": "RSI neutral (64.8)",
       "confidence": "LOW",
       "rsi": 64.8,
-      "time": "2026-04-10T23:49:03.563Z"
+      "time": "2026-04-10T23:54:08.872Z"
     }
   ],
-  "lastUpdated": "2026-04-10T23:49:05.066Z"
+  "lastUpdated": "2026-04-10T23:54:10.374Z"
 }
