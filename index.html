@@ -769,7 +769,7 @@ function renderTrades(trades) {
 
   countEl.textContent = `${trades.length} Trades`;
   // newest first
-  const sorted = [...trades].sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+  const sorted = [...trades].sort((a,b) => new Date(b.closedAt || b.timestamp || 0) - new Date(a.closedAt || a.timestamp || 0));
 
   tbody.innerHTML = sorted.map(t => {
     const pnlClass = t.pnl >= 0 ? 'pnl-pos' : 'pnl-neg';
@@ -819,7 +819,7 @@ function renderSignals(signals) {
 
 // ─── Render Stats ────────────────────────────────────────────────────
 function renderStats(data) {
-  const initialBalance = data.balance || 10000;
+  const initialBalance = 10000; // Fixed paper trading baseline
   const totalPnl = (data.equityHistory?.length >= 2
     ? data.equityHistory[data.equityHistory.length-1].equity - initialBalance
     : 0);
@@ -902,7 +902,7 @@ async function loadData() {
 
 // ─── Init ─────────────────────────────────────────────────────────────
 loadData();
-setInterval(loadData, 5000); // refresh every 5s
+setInterval(loadData, 60000); // refresh every 60s (GitHub API: 60 req/hr unauthenticated)
 </script>
 
 </body>
