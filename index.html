@@ -489,7 +489,9 @@
 
     @media (max-width: 600px) {
       .stats-row { grid-template-columns: 1fr 1fr; }
+      .header { flex-wrap: wrap; gap: 12px; }
       .header-right { gap: 12px; }
+      .balance-value { font-size: 18px; }
     }
   </style>
 </head>
@@ -625,6 +627,7 @@
 let equityChart = null;
 let tradeChart = null;
 let currentData = null;
+let lastFetchTime = Date.now();
 
 // ─── Formatters ──────────────────────────────────────────────────────
 const fmt = {
@@ -717,9 +720,21 @@ function buildEquityChart(data) {
           grid: { color: GRID_COLOR, drawBorder: false },
           ticks: {
             font: { family: "'JetBrains Mono'", size: 11 },
-            callback: (v) => '$' + (v/1000).toFixed(0) + 'k',
+            callback: (v) => v >= 10000 ? '$' + (v/1000).toFixed(1) + 'k' : '$' + v.toLocaleString(),
           },
           border: { display: false },
+          min: (() => {
+            const lo = Math.min(...values);
+            const hi = Math.max(...values);
+            const range = Math.max(hi - lo, 1);
+            return lo - range * 0.1;
+          })(),
+          max: (() => {
+            const lo = Math.min(...values);
+            const hi = Math.max(...values);
+            const range = Math.max(hi - lo, 1);
+            return hi + range * 0.1;
+          })(),
         }
       }
     }
@@ -745,7 +760,7 @@ function renderPositions(positions) {
       <div class="position-item">
         <div>
           <div class="pos-symbol">${p.symbol}</div>
-          <div class="pos-details">${p.side} · ${fmt.qty(p.qty)} · Entry $${(p.entry||0).toLocaleString()}</div>
+          <div class="pos-details">${p.side} · ${fmt.qty(p.qty)} · Entry $${(p.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})} → $${(p.current||p.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})}</div>
         </div>
         <div><span class="pos-side ${p.side.toLowerCase()}">${p.side}</span></div>
         <div style="text-align:right">
@@ -783,7 +798,7 @@ function renderTrades(trades) {
         </td>
         <td><span class="side-badge ${t.side.toLowerCase()}">${t.side}</span></td>
         <td class="mono">${fmt.qty(t.qty)}</td>
-        <td class="mono">$${(t.entry||0).toLocaleString()} → $${(t.exit||0).toLocaleString()}</td>
+        <td class="mono">$${(t.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})} → $${(t.exit||0).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
         <td><span class="reason-tag">${t.reason || '—'}</span></td>
         <td><span class="mono ${pnlClass}">${sign}${fmt.usd(t.pnl)} <span style="opacity:0.7">${fmt.pct(t.pnlPct)}</span></span></td>
       </tr>`;
@@ -820,9 +835,14 @@ function renderSignals(signals) {
 // ─── Render Stats ────────────────────────────────────────────────────
 function renderStats(data) {
   const initialBalance = 10000; // Fixed paper trading baseline
-  const totalPnl = (data.equityHistory?.length >= 2
-    ? data.equityHistory[data.equityHistory.length-1].equity - initialBalance
-    : 0);
+  // Use totalEquity (cash + positions) for accurate P&L, fallback to equity history
+  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.qty * (p.current || p.entry)), 0);
+  const computedEquity = (data.balance || 0) + posValue;
+  const totalPnl = computedEquity > 0
+    ? computedEquity - initialBalance
+    : (data.equityHistory?.length >= 1
+      ? data.equityHistory[data.equityHistory.length-1].equity - initialBalance
+      : 0);
   const pnlClass = totalPnl >= 0 ? 'green' : 'red';
   const pnlSign = totalPnl >= 0 ? '+' : '';
   const pnlPct = initialBalance > 0 ? ((totalPnl / initialBalance) * 100).toFixed(2) : '0.00';
@@ -863,14 +883,27 @@ function updateHeader(data) {
 
   const balEl = document.getElementById('balanceVal');
   const pnlEl = document.getElementById('pnlBadge');
-  const bal = data.balance || 0;
-  const totalPnl = data.equityHistory?.length >= 2
-    ? data.equityHistory[data.equityHistory.length-1].equity - (data.equityHistory[0].equity || bal)
-    : 0;
+  // Total equity = cash balance + open position value
+  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.qty * (p.current || p.entry)), 0);
+  const totalEquity = (data.balance || 0) + posValue;
+  const initialBalance = 10000;
+  const totalPnl = totalEquity - initialBalance;
   const pnlSign = totalPnl >= 0 ? '+' : '';
   pnlEl.textContent = `${pnlSign}${fmt.usd(totalPnl)}`;
   pnlEl.className = `pnl ${totalPnl >= 0 ? 'positive' : 'negative'}`;
-  balEl.innerHTML = `${fmt.usd(bal)} <span class="pnl ${totalPnl >= 0 ? 'positive' : 'negative'}" id="pnlBadge">${pnlSign}${fmt.usd(totalPnl)}</span>`;
+  balEl.innerHTML = `${fmt.usd(totalEquity)} <span class="pnl ${totalPnl >= 0 ? 'positive' : 'negative'}" id="pnlBadge">${pnlSign}${fmt.usd(totalPnl)}</span>`;
+}
+
+// ─── Stale Indicator ─────────────────────────────────────────────────
+function updateStaleIndicator() {
+  const dot = document.querySelector('.live-dot');
+  if (!dot) return;
+  const elapsed = Date.now() - lastFetchTime;
+  if (elapsed > 5 * 60 * 1000) {
+    dot.style.background = 'var(--orange)';
+  } else {
+    dot.style.background = 'var(--green)';
+  }
 }
 
 // ─── Load Data ────────────────────────────────────────────────────────
@@ -879,13 +912,26 @@ async function loadData() {
     // Fetch from GitHub API (bypasses CDN caching issues with raw URL)
     const DATA_URL = 'https://api.github.com/repos/toddclawbot-cmyk/trading-tracker/contents/dashboard-data.json';
     const resp = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store', headers: { Accept: 'application/vnd.github.v3+json' } });
-    if (!resp.ok) return;
+    if (!resp.ok) {
+      console.warn(`GitHub API returned ${resp.status} — may be rate limited`);
+      updateStaleIndicator();
+      return;
+    }
     const githubData = await resp.json();
-    const rawContent = atob(githubData.content.replace(/\n/g, ''));
-    data = JSON.parse(rawContent);
+    let rawContent;
+    try {
+      rawContent = atob(githubData.content.replace(/\n/g, ''));
+    } catch (decodeErr) {
+      console.warn('Failed to decode base64 content:', decodeErr.message);
+      updateStaleIndicator();
+      return;
+    }
+    const data = JSON.parse(rawContent);
     currentData = data;
+    lastFetchTime = Date.now();
 
     updateHeader(data);
+    updateStaleIndicator();
     renderStats(data);
     renderPositions(data.positions);
     renderTrades(data.trades);
@@ -896,7 +942,7 @@ async function loadData() {
     }
   } catch (e) {
     console.warn('Could not load data.json:', e.message);
-    // silently fail — keep showing placeholder data
+    updateStaleIndicator();
   }
 }
 
