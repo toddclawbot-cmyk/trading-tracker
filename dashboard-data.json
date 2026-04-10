@@ -1,12 +1,1 @@
-{
-  "balance": 10000,
-  "positions": [],
-  "trades": [],
-  "equityHistory": [
-    {
-      "time": "2026-04-10T19:22:49.554Z",
-      "equity": 10000
-    }
-  ],
-  "lastUpdated": "2026-04-10T19:22:49.554Z"
-}
+{"balance":10000,"positions":[],"trades":[],"equityHistory":[{"time":"2026-04-10T19:22:00Z","equity":10000}],"lastUpdated":"2026-04-10T19:22:00Z"}
