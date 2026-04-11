@@ -30,6 +30,10 @@
     {
       "time": "2026-04-11T02:23:23.964Z",
       "equity": 10000
+    },
+    {
+      "time": "2026-04-11T02:24:19.282Z",
+      "equity": 10000
     }
   ],
   "signals": [
@@ -39,7 +43,7 @@
       "reason": "Insufficient data for RSI",
       "confidence": "LOW",
       "rsi": 50,
-      "time": "2026-04-11T02:23:23.963Z"
+      "time": "2026-04-11T02:24:19.282Z"
     },
     {
       "symbol": "ETH",
@@ -47,7 +51,7 @@
       "reason": "Insufficient data for RSI",
       "confidence": "LOW",
       "rsi": 50,
-      "time": "2026-04-11T02:23:23.964Z"
+      "time": "2026-04-11T02:24:19.282Z"
     },
     {
       "symbol": "SOL",
@@ -55,8 +59,8 @@
       "reason": "Insufficient data for RSI",
       "confidence": "LOW",
       "rsi": 50,
-      "time": "2026-04-11T02:23:23.964Z"
+      "time": "2026-04-11T02:24:19.282Z"
     }
   ],
-  "lastUpdated": "2026-04-11T02:23:23.964Z"
+  "lastUpdated": "2026-04-11T02:24:19.282Z"
 }
