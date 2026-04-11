@@ -272,6 +272,13 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
+    .pos-value {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     /* Table */
     .table-wrap {
       overflow-x: auto;
@@ -761,6 +768,7 @@ function renderPositions(positions) {
         <div>
           <div class="pos-symbol">${p.symbol}</div>
           <div class="pos-details">${p.side} · ${fmt.qty(p.qty)} · Entry $${(p.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})} → $${(p.current||p.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})}</div>
+          <div class="pos-value">Value: ${fmt.usd((p.current||p.entry||0) * p.qty)}</div>
         </div>
         <div><span class="pos-side ${p.side.toLowerCase()}">${p.side}</span></div>
         <div style="text-align:right">
