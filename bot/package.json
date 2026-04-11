@@ -1,0 +1,10 @@
+{
+  "name": "trading-tracker-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node trader.js",
+    "once": "node trader.js --once"
+  },
+  "dependencies": {}
+}

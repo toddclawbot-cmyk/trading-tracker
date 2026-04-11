@@ -6,27 +6,27 @@
       "side": "SHORT",
       "qty": 0.048325752797279506,
       "entry": 73292.64,
-      "current": 72838,
-      "pnl": 21.97,
-      "pnlPct": 0.62
+      "current": 72963,
+      "pnl": 15.93,
+      "pnlPct": 0.45
     },
     {
       "symbol": "ETH",
       "side": "SHORT",
       "qty": 1.5739246063291026,
       "entry": 2250.38,
-      "current": 2239.29,
-      "pnl": 17.45,
-      "pnlPct": 0.49
+      "current": 2245.32,
+      "pnl": 7.96,
+      "pnlPct": 0.22
     },
     {
       "symbol": "SOL",
       "side": "SHORT",
       "qty": 41.58957399103139,
       "entry": 85.16,
-      "current": 84.71,
-      "pnl": 18.72,
-      "pnlPct": 0.53
+      "current": 84.68,
+      "pnl": 19.96,
+      "pnlPct": 0.56
     }
   ],
   "trades": [
@@ -63,33 +63,41 @@
     {
       "time": "2026-04-11T01:00:23.856Z",
       "equity": 10127.57
+    },
+    {
+      "time": "2026-04-11T01:58:57.352Z",
+      "equity": 20651.19
+    },
+    {
+      "time": "2026-04-11T01:59:06.442Z",
+      "equity": 20651.19
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
-      "signal": "SELL",
-      "reason": "RSI overbought (69.5)",
-      "confidence": "HIGH",
-      "rsi": 69.5,
-      "time": "2026-04-11T01:00:19.309Z"
+      "signal": "HOLD",
+      "reason": "Insufficient data for RSI",
+      "confidence": "LOW",
+      "rsi": 50,
+      "time": "2026-04-11T01:59:06.442Z"
     },
     {
       "symbol": "ETH",
-      "signal": "SELL",
-      "reason": "RSI overbought (64.3)",
-      "confidence": "HIGH",
-      "rsi": 64.3,
-      "time": "2026-04-11T01:00:20.830Z"
+      "signal": "HOLD",
+      "reason": "Insufficient data for RSI",
+      "confidence": "LOW",
+      "rsi": 50,
+      "time": "2026-04-11T01:59:06.442Z"
     },
     {
       "symbol": "SOL",
-      "signal": "SELL",
-      "reason": "RSI overbought (60.9)",
-      "confidence": "MEDIUM",
-      "rsi": 60.9,
-      "time": "2026-04-11T01:00:22.354Z"
+      "signal": "HOLD",
+      "reason": "Insufficient data for RSI",
+      "confidence": "LOW",
+      "rsi": 50,
+      "time": "2026-04-11T01:59:06.442Z"
     }
   ],
-  "lastUpdated": "2026-04-11T01:00:23.856Z"
+  "lastUpdated": "2026-04-11T01:59:06.442Z"
 }
