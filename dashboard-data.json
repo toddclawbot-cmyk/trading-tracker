@@ -200,24 +200,28 @@
     {
       "time": "2026-04-11T05:15:12.093Z",
       "equity": 10000
+    },
+    {
+      "time": "2026-04-11T05:20:12.107Z",
+      "equity": 10000
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "BUY",
-      "reason": "RSI approaching oversold (37.9)",
-      "confidence": "LOW",
-      "rsi": 37.9,
-      "time": "2026-04-11T05:15:12.093Z"
+      "reason": "RSI oversold (26.0)",
+      "confidence": "MEDIUM",
+      "rsi": 26,
+      "time": "2026-04-11T05:20:12.107Z"
     },
     {
       "symbol": "ETH",
-      "signal": "HOLD",
-      "reason": "RSI neutral (40.7)",
-      "confidence": "LOW",
-      "rsi": 40.7,
-      "time": "2026-04-11T05:15:12.093Z"
+      "signal": "BUY",
+      "reason": "RSI oversold (23.7)",
+      "confidence": "MEDIUM",
+      "rsi": 23.7,
+      "time": "2026-04-11T05:20:12.107Z"
     },
     {
       "symbol": "XRP",
@@ -225,8 +229,8 @@
       "reason": "RSI overbought (100.0)",
       "confidence": "HIGH",
       "rsi": 100,
-      "time": "2026-04-11T05:15:12.093Z"
+      "time": "2026-04-11T05:20:12.107Z"
     }
   ],
-  "lastUpdated": "2026-04-11T05:15:12.093Z"
+  "lastUpdated": "2026-04-11T05:20:12.107Z"
 }
