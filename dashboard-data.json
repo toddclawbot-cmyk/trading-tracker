@@ -754,16 +754,20 @@
     {
       "time": "2026-04-11T15:00:12.026Z",
       "equity": 10003.04
+    },
+    {
+      "time": "2026-04-11T15:05:12.044Z",
+      "equity": 10003.04
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "HOLD",
-      "reason": "RSI neutral (57.0)",
+      "reason": "RSI neutral (54.5)",
       "confidence": "LOW",
-      "rsi": 57,
-      "time": "2026-04-11T15:00:12.025Z"
+      "rsi": 54.5,
+      "time": "2026-04-11T15:05:12.043Z"
     },
     {
       "symbol": "ETH",
@@ -771,7 +775,7 @@
       "reason": "RSI neutral (58.3)",
       "confidence": "LOW",
       "rsi": 58.3,
-      "time": "2026-04-11T15:00:12.025Z"
+      "time": "2026-04-11T15:05:12.044Z"
     },
     {
       "symbol": "XRP",
@@ -779,8 +783,8 @@
       "reason": "RSI neutral (50.0)",
       "confidence": "LOW",
       "rsi": 50,
-      "time": "2026-04-11T15:00:12.025Z"
+      "time": "2026-04-11T15:05:12.044Z"
     }
   ],
-  "lastUpdated": "2026-04-11T15:00:12.026Z"
+  "lastUpdated": "2026-04-11T15:05:12.044Z"
 }
