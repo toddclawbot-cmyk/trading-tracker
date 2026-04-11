@@ -355,6 +355,7 @@
     .timestamp-cell {
       font-size: 11px;
       color: var(--text-tertiary);
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Signals */
@@ -593,6 +594,7 @@
           <thead>
             <tr>
               <th>Symbol</th>
+              <th>Time</th>
               <th>Side</th>
               <th>Qty</th>
               <th>Entry → Exit</th>
@@ -785,7 +787,7 @@ function renderTrades(trades) {
   const countEl = document.getElementById('tradeCount');
 
   if (!trades || trades.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="icon">📋</div><div class="msg">No trades yet — bot is running</div></div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7"><div class="empty-state"><div class="icon">📋</div><div class="msg">No trades yet — bot is running</div></div></td></tr>`;
     countEl.textContent = '0 Trades';
     return;
   }
@@ -804,6 +806,7 @@ function renderTrades(trades) {
             <span class="symbol-badge">${t.symbol}</span>
           </div>
         </td>
+        <td><span class="mono timestamp-cell">${fmt.time(t.closedAt || t.timestamp)}</span></td>
         <td><span class="side-badge ${t.side.toLowerCase()}">${t.side}</span></td>
         <td class="mono">${fmt.qty(t.qty)}</td>
         <td class="mono">$${(t.entry||0).toLocaleString(undefined,{minimumFractionDigits:2})} → $${(t.exit||0).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
