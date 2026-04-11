@@ -24,8 +24,8 @@ const DATA_FILE = join(PROJECT_ROOT, 'dashboard-data.json');
 const PRICE_HISTORY_FILE = join(__dirname, 'price-history.json');
 
 // ─── Config ──────────────────────────────────────────────────────────
-const TICKERS = ['BTC', 'ETH', 'SOL'];
-const COINGECKO_IDS = { BTC: 'bitcoin', ETH: 'ethereum', SOL: 'solana' };
+const TICKERS = ['BTC', 'ETH', 'XRP'];
+const COINGECKO_IDS = { BTC: 'bitcoin', ETH: 'ethereum', XRP: 'ripple' };
 const INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
 const INITIAL_BALANCE = 10000;
 
