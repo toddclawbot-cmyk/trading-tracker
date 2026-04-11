@@ -836,7 +836,7 @@ function renderSignals(signals) {
 function renderStats(data) {
   const initialBalance = 10000; // Fixed paper trading baseline
   // Use totalEquity (cash + positions) for accurate P&L, fallback to equity history
-  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.qty * (p.current || p.entry)), 0);
+  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.pnl || 0), 0);
   const computedEquity = (data.balance || 0) + posValue;
   const totalPnl = computedEquity > 0
     ? computedEquity - initialBalance
@@ -884,7 +884,7 @@ function updateHeader(data) {
   const balEl = document.getElementById('balanceVal');
   const pnlEl = document.getElementById('pnlBadge');
   // Total equity = cash balance + open position value
-  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.qty * (p.current || p.entry)), 0);
+  const posValue = (data.positions || []).reduce((sum, p) => sum + (p.pnl || 0), 0);
   const totalEquity = (data.balance || 0) + posValue;
   const initialBalance = 10000;
   const totalPnl = totalEquity - initialBalance;
