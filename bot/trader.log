@@ -1,9 +1,0 @@
-[2026-04-11T01:59:54.686Z] Trading bot started — running every 5 minutes
-[2026-04-11T01:59:54.687Z] Tickers: BTC, ETH, SOL
-[2026-04-11T01:59:54.687Z] Position size: $50
-[2026-04-11T01:59:54.687Z] RSI period: 14 | Overbought: 70 | Oversold: 30
-[2026-04-11T01:59:54.687Z] ─── Tick starting ───
-[2026-04-11T01:59:54.770Z] Prices: BTC=$72,955, ETH=$2,245.13, SOL=$84.68
-[2026-04-11T01:59:54.771Z] BTC: RSI=N/A → HOLD (LOW)
-[2026-04-11T01:59:54.771Z] ETH: RSI=N/A → HOLD (LOW)
-[2026-04-11T01:59:54.771Z] SOL: RSI=N/A → HOLD (LOW)

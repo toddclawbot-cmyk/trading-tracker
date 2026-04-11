@@ -144,11 +144,11 @@ function generateSignal(ticker, rsi) {
   if (rsi >= RSI_OVERBOUGHT) {
     signal = 'SELL';
     reason = `RSI overbought (${rsi.toFixed(1)})`;
-    confidence = rsi >= 80 ? 'HIGH' : 'HIGH';
+    confidence = rsi >= 80 ? 'HIGH' : 'MEDIUM';
   } else if (rsi <= RSI_OVERSOLD) {
     signal = 'BUY';
     reason = `RSI oversold (${rsi.toFixed(1)})`;
-    confidence = rsi <= 20 ? 'HIGH' : 'HIGH';
+    confidence = rsi <= 20 ? 'HIGH' : 'MEDIUM';
   } else if (rsi < 40) {
     signal = 'BUY';
     reason = `RSI approaching oversold (${rsi.toFixed(1)})`;
@@ -287,7 +287,7 @@ function executeTradeLogic(data, signals, prices) {
   }
 
   // --- Update equity history ---
-  const posValue = data.positions.reduce((sum, p) => sum + (p.qty * p.current), 0);
+  const posValue = data.positions.reduce((sum, p) => sum + (p.entry * p.qty) + p.pnl, 0);
   const equity = parseFloat((data.balance + posValue).toFixed(2));
   data.equityHistory.push({ time: now, equity });
 

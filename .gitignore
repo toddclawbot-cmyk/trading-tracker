@@ -1,2 +1,4 @@
 node_modules/
-bot/price-history.json
+bot/trader.log
+.vercel/
+.DS_Store
