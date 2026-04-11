@@ -2,19 +2,7 @@
   "balance": 10000,
   "positions": [],
   "trades": [],
-  "equityHistory": [
-    {"time": "2026-04-10T08:00:00Z", "equity": 10000},
-    {"time": "2026-04-10T09:00:00Z", "equity": 10015},
-    {"time": "2026-04-10T10:00:00Z", "equity": 10008},
-    {"time": "2026-04-10T11:00:00Z", "equity": 10022},
-    {"time": "2026-04-10T12:00:00Z", "equity": 10045},
-    {"time": "2026-04-10T13:00:00Z", "equity": 10038},
-    {"time": "2026-04-10T14:00:00Z", "equity": 10053}
-  ],
-  "signals": [
-    {"symbol": "BTC", "signal": "HOLD", "rsi": 58.4, "reason": "RSI neutral zone", "time": "2026-04-10T14:00:00Z"},
-    {"symbol": "ETH", "signal": "BUY", "rsi": 32.1, "reason": "RSI oversold — momentum shifting", "time": "2026-04-10T14:00:00Z"},
-    {"symbol": "SOL", "signal": "HOLD", "rsi": 61.2, "reason": "RSI neutral", "time": "2026-04-10T14:00:00Z"}
-  ],
-  "lastUpdated": "2026-04-10T14:00:00Z"
+  "equityHistory": [],
+  "signals": [],
+  "lastUpdated": null
 }
