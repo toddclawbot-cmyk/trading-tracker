@@ -1,23 +1,23 @@
 {
-  "balance": 9902.57,
+  "balance": 9902.94,
   "positions": [
     {
       "symbol": "ETH",
       "side": "SHORT",
       "qty": 0.022249,
       "entry": 2247.3,
-      "current": 2242.64,
-      "pnl": 0.1,
-      "pnlPct": 0.21
+      "current": 2243.06,
+      "pnl": 0.09,
+      "pnlPct": 0.19
     },
     {
       "symbol": "XRP",
-      "side": "SHORT",
-      "qty": 37.037037,
-      "entry": 1.35,
+      "side": "LONG",
+      "qty": 37.313433,
+      "entry": 1.34,
       "current": 1.34,
-      "pnl": 0.37,
-      "pnlPct": 0.74
+      "pnl": 0,
+      "pnlPct": 0
     }
   ],
   "trades": [
@@ -108,6 +108,17 @@
       "pnl": 0.37,
       "pnlPct": 0.75,
       "closedAt": "2026-04-11T14:05:12.026Z"
+    },
+    {
+      "symbol": "XRP",
+      "side": "SHORT",
+      "qty": 37.037037,
+      "entry": 1.35,
+      "exit": 1.34,
+      "reason": "Closed: RSI oversold (0.0)",
+      "pnl": 0.37,
+      "pnlPct": 0.74,
+      "closedAt": "2026-04-11T15:10:12.034Z"
     }
   ],
   "equityHistory": [
@@ -758,33 +769,37 @@
     {
       "time": "2026-04-11T15:05:12.044Z",
       "equity": 10003.04
+    },
+    {
+      "time": "2026-04-11T15:10:12.034Z",
+      "equity": 10003.03
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "HOLD",
-      "reason": "RSI neutral (54.5)",
+      "reason": "RSI neutral (53.6)",
       "confidence": "LOW",
-      "rsi": 54.5,
-      "time": "2026-04-11T15:05:12.043Z"
+      "rsi": 53.6,
+      "time": "2026-04-11T15:10:12.033Z"
     },
     {
       "symbol": "ETH",
-      "signal": "HOLD",
-      "reason": "RSI neutral (58.3)",
+      "signal": "SELL",
+      "reason": "RSI approaching overbought (60.2)",
       "confidence": "LOW",
-      "rsi": 58.3,
-      "time": "2026-04-11T15:05:12.044Z"
+      "rsi": 60.2,
+      "time": "2026-04-11T15:10:12.033Z"
     },
     {
       "symbol": "XRP",
-      "signal": "HOLD",
-      "reason": "RSI neutral (50.0)",
-      "confidence": "LOW",
-      "rsi": 50,
-      "time": "2026-04-11T15:05:12.044Z"
+      "signal": "BUY",
+      "reason": "RSI oversold (0.0)",
+      "confidence": "HIGH",
+      "rsi": 0,
+      "time": "2026-04-11T15:10:12.033Z"
     }
   ],
-  "lastUpdated": "2026-04-11T15:05:12.044Z"
+  "lastUpdated": "2026-04-11T15:10:12.034Z"
 }
