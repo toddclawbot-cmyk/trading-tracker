@@ -6,27 +6,27 @@
       "side": "LONG",
       "qty": 0.021795,
       "entry": 2294.09,
-      "current": 2299.65,
-      "pnl": 0.12,
-      "pnlPct": 0.24
+      "current": 2304.21,
+      "pnl": 0.22,
+      "pnlPct": 0.44
     },
     {
       "symbol": "BTC",
       "side": "LONG",
       "qty": 0.000682,
       "entry": 73336,
-      "current": 73429,
-      "pnl": 0.06,
-      "pnlPct": 0.13
+      "current": 73555,
+      "pnl": 0.15,
+      "pnlPct": 0.3
     },
     {
       "symbol": "XRP",
       "side": "SHORT",
       "qty": 36.764706,
       "entry": 1.36,
-      "current": 1.36,
-      "pnl": 0,
-      "pnlPct": 0
+      "current": 1.37,
+      "pnl": -0.37,
+      "pnlPct": -0.74
     }
   ],
   "trades": [
@@ -208,10 +208,6 @@
     }
   ],
   "equityHistory": [
-    {
-      "time": "2026-04-11T05:30:12.140Z",
-      "equity": 10000
-    },
     {
       "time": "2026-04-11T05:35:12.109Z",
       "equity": 10000
@@ -1007,33 +1003,37 @@
     {
       "time": "2026-04-11T22:05:11.994Z",
       "equity": 10001.74
+    },
+    {
+      "time": "2026-04-11T22:10:12.068Z",
+      "equity": 10001.56
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
-      "signal": "HOLD",
-      "reason": "RSI neutral (48.2)",
-      "confidence": "LOW",
-      "rsi": 48.2,
-      "time": "2026-04-11T22:05:11.994Z"
+      "signal": "SELL",
+      "reason": "RSI overbought (70.6)",
+      "confidence": "MEDIUM",
+      "rsi": 70.6,
+      "time": "2026-04-11T22:10:12.068Z"
     },
     {
       "symbol": "ETH",
-      "signal": "HOLD",
-      "reason": "RSI neutral (44.6)",
+      "signal": "SELL",
+      "reason": "RSI approaching overbought (64.2)",
       "confidence": "LOW",
-      "rsi": 44.6,
-      "time": "2026-04-11T22:05:11.994Z"
+      "rsi": 64.2,
+      "time": "2026-04-11T22:10:12.068Z"
     },
     {
       "symbol": "XRP",
-      "signal": "HOLD",
-      "reason": "RSI neutral (50.0)",
+      "signal": "SELL",
+      "reason": "RSI approaching overbought (66.7)",
       "confidence": "LOW",
-      "rsi": 50,
-      "time": "2026-04-11T22:05:11.994Z"
+      "rsi": 66.7,
+      "time": "2026-04-11T22:10:12.068Z"
     }
   ],
-  "lastUpdated": "2026-04-11T22:05:11.994Z"
+  "lastUpdated": "2026-04-11T22:10:12.068Z"
 }
