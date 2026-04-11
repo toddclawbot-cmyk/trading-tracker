@@ -6,9 +6,9 @@
       "side": "LONG",
       "qty": 0.022406,
       "entry": 2231.51,
-      "current": 2234.82,
-      "pnl": 0.07,
-      "pnlPct": 0.15
+      "current": 2235.5,
+      "pnl": 0.09,
+      "pnlPct": 0.18
     },
     {
       "symbol": "XRP",
@@ -387,24 +387,28 @@
     {
       "time": "2026-04-11T08:30:12.034Z",
       "equity": 10000.81
+    },
+    {
+      "time": "2026-04-11T08:35:12.067Z",
+      "equity": 10000.83
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "HOLD",
-      "reason": "RSI neutral (48.5)",
+      "reason": "RSI neutral (44.2)",
       "confidence": "LOW",
-      "rsi": 48.5,
-      "time": "2026-04-11T08:30:12.033Z"
+      "rsi": 44.2,
+      "time": "2026-04-11T08:35:12.066Z"
     },
     {
       "symbol": "ETH",
       "signal": "HOLD",
-      "reason": "RSI neutral (49.9)",
+      "reason": "RSI neutral (50.2)",
       "confidence": "LOW",
-      "rsi": 49.9,
-      "time": "2026-04-11T08:30:12.033Z"
+      "rsi": 50.2,
+      "time": "2026-04-11T08:35:12.066Z"
     },
     {
       "symbol": "XRP",
@@ -412,8 +416,8 @@
       "reason": "RSI overbought (100.0)",
       "confidence": "HIGH",
       "rsi": 100,
-      "time": "2026-04-11T08:30:12.033Z"
+      "time": "2026-04-11T08:35:12.066Z"
     }
   ],
-  "lastUpdated": "2026-04-11T08:30:12.034Z"
+  "lastUpdated": "2026-04-11T08:35:12.067Z"
 }
