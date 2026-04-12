@@ -6,17 +6,17 @@
       "side": "LONG",
       "qty": 0.021795,
       "entry": 2294.09,
-      "current": 2218.41,
-      "pnl": -1.65,
-      "pnlPct": -3.3
+      "current": 2219.03,
+      "pnl": -1.64,
+      "pnlPct": -3.27
     },
     {
       "symbol": "BTC",
       "side": "LONG",
       "qty": 0.000682,
       "entry": 73336,
-      "current": 71712,
-      "pnl": -1.11,
+      "current": 71717,
+      "pnl": -1.1,
       "pnlPct": -2.21
     },
     {
@@ -230,10 +230,6 @@
     }
   ],
   "equityHistory": [
-    {
-      "time": "2026-04-11T15:55:12.018Z",
-      "equity": 10003.27
-    },
     {
       "time": "2026-04-11T16:00:12.032Z",
       "equity": 10003.23
@@ -1029,24 +1025,28 @@
     {
       "time": "2026-04-12T08:30:11.947Z",
       "equity": 9998.43
+    },
+    {
+      "time": "2026-04-12T08:35:11.974Z",
+      "equity": 9998.45
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "SELL",
-      "reason": "RSI approaching overbought (61.9)",
+      "reason": "RSI approaching overbought (61.1)",
       "confidence": "LOW",
-      "rsi": 61.9,
-      "time": "2026-04-12T08:30:11.947Z"
+      "rsi": 61.1,
+      "time": "2026-04-12T08:35:11.973Z"
     },
     {
       "symbol": "ETH",
       "signal": "SELL",
-      "reason": "RSI approaching overbought (66.6)",
+      "reason": "RSI approaching overbought (65.5)",
       "confidence": "LOW",
-      "rsi": 66.6,
-      "time": "2026-04-12T08:30:11.947Z"
+      "rsi": 65.5,
+      "time": "2026-04-12T08:35:11.973Z"
     },
     {
       "symbol": "XRP",
@@ -1054,8 +1054,8 @@
       "reason": "RSI overbought (100.0)",
       "confidence": "HIGH",
       "rsi": 100,
-      "time": "2026-04-12T08:30:11.947Z"
+      "time": "2026-04-12T08:35:11.973Z"
     }
   ],
-  "lastUpdated": "2026-04-12T08:30:11.947Z"
+  "lastUpdated": "2026-04-12T08:35:11.974Z"
 }
