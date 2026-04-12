@@ -6,27 +6,27 @@
       "side": "LONG",
       "qty": 0.021795,
       "entry": 2294.09,
-      "current": 2248.79,
-      "pnl": -0.99,
-      "pnlPct": -1.97
+      "current": 2228.78,
+      "pnl": -1.42,
+      "pnlPct": -2.85
     },
     {
       "symbol": "BTC",
       "side": "LONG",
       "qty": 0.000682,
       "entry": 73336,
-      "current": 72137,
-      "pnl": -0.82,
-      "pnlPct": -1.63
+      "current": 71728,
+      "pnl": -1.1,
+      "pnlPct": -2.19
     },
     {
       "symbol": "XRP",
       "side": "LONG",
       "qty": 37.037037,
       "entry": 1.35,
-      "current": 1.34,
-      "pnl": -0.37,
-      "pnlPct": -0.74
+      "current": 1.33,
+      "pnl": -0.74,
+      "pnlPct": -1.48
     }
   ],
   "trades": [
@@ -219,10 +219,6 @@
     }
   ],
   "equityHistory": [
-    {
-      "time": "2026-04-11T09:05:12.096Z",
-      "equity": 10000.8
-    },
     {
       "time": "2026-04-11T09:10:12.039Z",
       "equity": 10000.79
@@ -1018,33 +1014,37 @@
     {
       "time": "2026-04-12T01:40:11.974Z",
       "equity": 9999.75
+    },
+    {
+      "time": "2026-04-12T01:45:11.998Z",
+      "equity": 9998.67
     }
   ],
   "signals": [
     {
       "symbol": "BTC",
       "signal": "BUY",
-      "reason": "RSI oversold (14.8)",
+      "reason": "RSI oversold (10.3)",
       "confidence": "HIGH",
-      "rsi": 14.8,
-      "time": "2026-04-12T01:40:11.974Z"
+      "rsi": 10.3,
+      "time": "2026-04-12T01:45:11.998Z"
     },
     {
       "symbol": "ETH",
       "signal": "BUY",
-      "reason": "RSI oversold (19.7)",
+      "reason": "RSI oversold (14.2)",
       "confidence": "HIGH",
-      "rsi": 19.7,
-      "time": "2026-04-12T01:40:11.974Z"
+      "rsi": 14.2,
+      "time": "2026-04-12T01:45:11.998Z"
     },
     {
       "symbol": "XRP",
-      "signal": "HOLD",
-      "reason": "RSI neutral (40.0)",
+      "signal": "BUY",
+      "reason": "RSI approaching oversold (33.3)",
       "confidence": "LOW",
-      "rsi": 40,
-      "time": "2026-04-12T01:40:11.974Z"
+      "rsi": 33.3,
+      "time": "2026-04-12T01:45:11.998Z"
     }
   ],
-  "lastUpdated": "2026-04-12T01:40:11.974Z"
+  "lastUpdated": "2026-04-12T01:45:11.998Z"
 }
